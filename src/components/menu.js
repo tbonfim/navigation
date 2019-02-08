@@ -18,6 +18,7 @@ class Menu extends Component {
     this.fetchData();
     window.addEventListener('resize', this.updateSlider);
   }
+  
   updateSlider = () => {
     const currentActiveElement = document.getElementsByClassName('active')[0];
     this.goTo(currentActiveElement);
@@ -40,7 +41,7 @@ class Menu extends Component {
     if (element.currentTarget.classList.contains(activeClass)) return null;
 
     const currentActiveList = document.getElementsByClassName(activeClass);
-    if ( currentActiveList.length > 0 ){
+    if (currentActiveList.length > 0 ){
       currentActiveList[0].classList.remove(activeClass);
     }
     element.currentTarget.classList.add(activeClass);
@@ -49,7 +50,7 @@ class Menu extends Component {
   }
 
   goTo = (element) => {
-    if(! element) return null;
+    if(!element) return null;
     const newAnimationX = element.getBoundingClientRect().left;
     const newAnimationWidth = element.offsetWidth;
     const slider = document.getElementById('slider');
@@ -57,6 +58,7 @@ class Menu extends Component {
     slider.style.width  = newAnimationWidth + 'px';
     slider.style.transform = 'translateX(' + newAnimationX + 'px)';
   }
+
   getCurrentTime = () => {
     const currentActiveElement = document.getElementsByClassName('active')[0];
     if (!currentActiveElement) return null;
@@ -74,9 +76,10 @@ class Menu extends Component {
     const date = new Date();
     const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
     const newDate = new Date(utc + (3600000 * offset));
-  
-    this.setState({currentTime: newDate.getHours() + ':' + newDate.getMinutes()}); 
+    
+    this.setState({currentTime: newDate.toLocaleTimeString()}); 
   }
+
   render() {
     const {items} = this.state;
     if(items.length <= 0) return null;

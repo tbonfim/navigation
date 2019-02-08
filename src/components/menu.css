@@ -20,6 +20,7 @@ nav {
   width: fit-content;
   margin: auto;
   border-bottom: 1px solid #cccccc;
+  padding: 0 2.5rem;
 }
 
 a {
@@ -41,7 +42,9 @@ a:hover{
 a.active{
   color: #333;
  }
-
+#slider.first-animation{
+  transition: transform 0ms, width 0ms;
+}
 #slider{
   background: #000;
   height: 1px;
@@ -53,7 +56,7 @@ a.active{
 #currentTime {
   display: block;
   margin: auto;
-  width: 20%;
+  width: 25%;
   text-align: center;
   color: rgba(51,51,51,0.6);
   font-size: 3rem;
