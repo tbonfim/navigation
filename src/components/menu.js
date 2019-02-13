@@ -51,7 +51,7 @@ class Menu extends Component {
 
   goTo = (element) => {
     if(!element) return null;
-    const newAnimationX = element.getBoundingClientRect().left;
+    const newAnimationX = element.getBoundingClientRect().left - (window.innerWidth / 2);
     const newAnimationWidth = element.offsetWidth;
     const slider = document.getElementById('slider');
     

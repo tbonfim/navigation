@@ -1,18 +1,15 @@
 html,
-body {
+body{
   height: 100%;
 }
-
-body {
+body{
   display: flex;
 }
-
 #root{
   margin-top: 25%;
   width: 100%;
 }
-
-nav {
+nav{
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -22,8 +19,7 @@ nav {
   border-bottom: 1px solid #cccccc;
   padding: 0 2.5rem;
 }
-
-a {
+a{
   margin: 0 10px;
   padding-bottom: 10px;
   text-decoration: none;
@@ -35,25 +31,23 @@ a {
   text-align: center;
   color:rgba(51,51,51,0.6);
 }
-
 a:hover{
   color: #0070c9;
 }
 a.active{
   color: #333;
- }
-#slider.first-animation{
-  transition: transform 0ms, width 0ms;
 }
 #slider{
   background: #000;
   height: 1px;
   margin-top: -1px;
+  width: 4em;
+  left: 50%;
   display: block;
   position: absolute;
   transition: transform 500ms, width 500ms;
 }
-#currentTime {
+#currentTime{
   display: block;
   margin: auto;
   width: 25%;
